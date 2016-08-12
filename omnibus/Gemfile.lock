@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/chef/omnibus-software.git
-  revision: b1a068c75d4eb0833c6c3884f7e0692ab1f29fb1
-  branch: ksubrama/ruby23
+  revision: 5ca4d97ba7ca5062c7291b857949d3ad734bd47d
+  branch: shain/solaris_10_refresh
   specs:
     omnibus-software (4.0.0)
       chef-sugar (>= 3.4.0)
@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: git://github.com/chef/omnibus.git
-  revision: 7461ec540c52251800258286ba8984725125ebe2
-  branch: ksubrama/gcc_investigate
+  revision: d56218250c7533606f8d3f44c15b50c79f504fd7
+  branch: shain/solaris_10_refresh
   specs:
     omnibus (5.4.0)
       aws-sdk (~> 2)
@@ -41,12 +41,12 @@ GEM
     addressable (2.4.0)
     artifactory (2.3.3)
     awesome_print (1.7.0)
-    aws-sdk (2.5.1)
-      aws-sdk-resources (= 2.5.1)
-    aws-sdk-core (2.5.1)
+    aws-sdk (2.5.3)
+      aws-sdk-resources (= 2.5.3)
+    aws-sdk-core (2.5.3)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.5.1)
-      aws-sdk-core (= 2.5.1)
+    aws-sdk-resources (2.5.3)
+      aws-sdk-core (= 2.5.3)
     berkshelf (4.3.5)
       addressable (~> 2.3, >= 2.3.4)
       berkshelf-api-client (~> 2.0, >= 2.0.2)
@@ -149,7 +149,7 @@ GEM
     nori (2.6.0)
     octokit (4.3.0)
       sawyer (~> 0.7.0, >= 0.5.3)
-    ohai (8.18.0)
+    ohai (8.19.0)
       chef-config (>= 12.5.0.alpha.1, < 13)
       ffi (~> 1.9)
       ffi-yajl (~> 2.2)
