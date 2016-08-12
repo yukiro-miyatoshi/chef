@@ -49,6 +49,8 @@ overrides_path = File.expand_path("../../../../omnibus_overrides.rb", current_fi
 instance_eval(IO.read(overrides_path), overrides_path)
 
 override :"ruby-windows-devkit", version: "4.5.2-20111229-1559" if windows? && windows_arch_i386?
+# just for testing purposes
+override :ruby, version: "2.1.8"
 
 dependency "preparation"
 
