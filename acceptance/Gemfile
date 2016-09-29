@@ -13,4 +13,4 @@ gem "winrm-elevated"
 gem "berkshelf", "4.3.5"
 
 # until 2.0.0 is fixed for unstable packages
-gem "mixlib-install", "1.2.3"
+gem "mixlib-install", "~> 2.0"
