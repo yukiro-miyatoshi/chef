@@ -604,7 +604,9 @@ class Chef
       validate_action(action)
 
       if Chef::Config[:verbose_logging] || Chef::Log.level == :debug
+
         # This can be noisy
+        Chef::Log.info("BTM: #{Chef::Config[:verbose_logging]} / #{Chef::Log.level}")
         Chef::Log.info("Processing #{self} action #{action} (#{defined_at})")
       end
 
