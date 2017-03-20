@@ -8,7 +8,8 @@ GIT
 
 GIT
   remote: https://github.com/chef/omnibus
-  revision: 76d907f4fe92a28c5f7ab11779341e1d773c358d
+  revision: 1ecfbc6781ea29fc24c5c979f5bff7b7f646dcea
+  branch: tm/safe_glob
   specs:
     omnibus (5.5.0)
       aws-sdk (~> 2)
@@ -37,13 +38,13 @@ GEM
       public_suffix (~> 2.0, >= 2.0.2)
     artifactory (2.7.0)
     awesome_print (1.7.0)
-    aws-sdk (2.8.5)
-      aws-sdk-resources (= 2.8.5)
-    aws-sdk-core (2.8.5)
+    aws-sdk (2.8.7)
+      aws-sdk-resources (= 2.8.7)
+    aws-sdk-core (2.8.7)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.8.5)
-      aws-sdk-core (= 2.8.5)
+    aws-sdk-resources (2.8.7)
+      aws-sdk-core (= 2.8.7)
     aws-sigv4 (1.0.0)
     berkshelf (4.3.5)
       addressable (~> 2.3, >= 2.3.4)
