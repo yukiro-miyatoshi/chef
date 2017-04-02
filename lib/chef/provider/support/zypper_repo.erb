@@ -2,7 +2,6 @@
 # Do NOT modify this file by hand.
 
 [<%= @config.repo_name %>]
-name=<%= @config.description %>
 <% %w{ type enabled autorefresh gpgcheck gpgkey baseurl mirrorlist path priority keeppackages mode refresh_cache }.each do |prop| -%>
 <%  next if @config.send("#{prop}=".to_sym).nil? -%>
 <%= prop %>=<%=
@@ -15,3 +14,4 @@ name=<%= @config.description %>
          @config.send("#{prop}=".to_sym)
        end %>
 <% end -%>
+name=<%= @config.description || @config.repo_name %>
