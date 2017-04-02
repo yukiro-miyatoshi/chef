@@ -46,9 +46,7 @@ class Chef
           sensitive new_resource.sensitive
           variables(config: new_resource)
           mode new_resource.mode
-          if new_resource.refresh_cache
-            notifies :run, "execute[zypper --non-interactive refresh #{new_resource.repo_name}]", :immediately if new_resource.clean_metadata || new_resource.clean_headers
-          end
+          notifies :run, "execute[zypper --non-interactive refresh #{new_resource.repo_name}]", :immediately if new_resource.refresh_cache
         end
 
         declare_resource(:execute, "zypper --non-interactive refresh #{new_resource.repo_name}") do

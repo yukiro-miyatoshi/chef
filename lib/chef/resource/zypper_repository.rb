@@ -38,6 +38,7 @@ class Chef
       property :keeppackages, [true, false], default: false
       property :mode, default: "0644"
       property :refresh_cache, [true, false], default: true
+      property :source, String, regex: /.*/
 
       default_action :create
       allowed_actions :create, :remove, :add, :refresh
