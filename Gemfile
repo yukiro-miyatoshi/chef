@@ -21,7 +21,7 @@ gem "cheffish", "~> 13" # required for rspec tests
 group(:omnibus_package) do
   gem "appbundler"
   gem "rb-readline"
-  gem "inspec"
+  gem "inspec", ">= 1.19.1"
   # nokogiri has no ruby-2.4 version for windows so it cannot go into our Gemfile.lock
   #  gem "nokogiri", ">= 1.7.1"
 end
@@ -73,7 +73,7 @@ group(:linux, :bsd, :mac_os_x, :solaris) do
 end
 
 group(:development, :test) do
-  gem "simplecov"
+  gem "simplecov", ">= 0.14.1"
 
   # for testing new chefstyle rules
   # gem 'chefstyle', github: 'chef/chefstyle'
@@ -88,7 +88,7 @@ end
 group(:travis) do
   # See `bundler-audit` in .travis.yml
   gem "bundler-audit", git: "https://github.com/rubysec/bundler-audit.git"
-  gem "travis"
+  gem "travis", ">= 1.8.8"
 end
 
 instance_eval(ENV["GEMFILE_MOD"]) if ENV["GEMFILE_MOD"]
