@@ -16,7 +16,7 @@ gem "ohai", "~> 13"
 gem "chef-config", path: File.expand_path("../chef-config", __FILE__) if File.exist?(File.expand_path("../chef-config", __FILE__))
 gem "rake"
 gem "bundler"
-gem "cheffish", "~> 13" # required for rspec tests
+gem "cheffish", "~> 13", ">= 13.0.0" # required for rspec tests
 
 group(:omnibus_package) do
   gem "appbundler"
@@ -36,7 +36,7 @@ end
 # These are used for external tests
 group(:integration) do
   gem "chef-sugar"
-  gem "chefspec"
+  gem "chefspec", ">= 5.4.0"
   gem "halite", git: "https://github.com/poise/halite.git"
   gem "poise", git: "https://github.com/poise/poise.git"
   gem "poise-boiler", git: "https://github.com/poise/poise-boiler.git"
