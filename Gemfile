@@ -41,7 +41,7 @@ group(:integration) do
   gem "poise", git: "https://github.com/poise/poise.git"
   gem "poise-boiler", git: "https://github.com/poise/poise-boiler.git"
   gem "knife-windows"
-  gem "foodcritic"
+  gem "foodcritic", ">= 8.2.0"
 
   # We pin this so nobody brings in a cucumber-core incompatible with cucumber latest
   gem "cucumber", ">= 2.4.0"
