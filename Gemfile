@@ -11,7 +11,7 @@ source "https://rubygems.org"
 # of bundler versions prior to 1.12.0 (https://github.com/bundler/bundler/commit/193a14fe5e0d56294c7b370a0e59f93b2c216eed)
 gem "chef", path: "."
 
-gem "ohai", "~> 13"
+gem "ohai", "~> 13", ">= 13.0.1"
 
 gem "chef-config", path: File.expand_path("../chef-config", __FILE__) if File.exist?(File.expand_path("../chef-config", __FILE__))
 gem "rake"
@@ -21,7 +21,7 @@ gem "cheffish", "~> 13" # required for rspec tests
 group(:omnibus_package) do
   gem "appbundler"
   gem "rb-readline"
-  gem "inspec"
+  gem "inspec", ">= 1.19.1"
   # nokogiri has no ruby-2.4 version for windows so it cannot go into our Gemfile.lock
   #  gem "nokogiri", ">= 1.7.1"
 end
@@ -36,7 +36,7 @@ end
 # These are used for external tests
 group(:integration) do
   gem "chef-sugar"
-  gem "chefspec"
+  gem "chefspec", ">= 5.4.0"
   gem "halite", git: "https://github.com/poise/halite.git"
   gem "poise", git: "https://github.com/poise/poise.git"
   gem "poise-boiler", git: "https://github.com/poise/poise-boiler.git"
@@ -57,7 +57,7 @@ group(:maintenance, :ci) do
   gem "tomlrb"
 
   # To sync maintainers with github
-  gem "octokit"
+  gem "octokit", ">= 4.7.0"
   gem "netrc"
 end
 
@@ -88,7 +88,7 @@ end
 group(:travis) do
   # See `bundler-audit` in .travis.yml
   gem "bundler-audit", git: "https://github.com/rubysec/bundler-audit.git"
-  gem "travis"
+  gem "travis", ">= 1.8.8"
 end
 
 instance_eval(ENV["GEMFILE_MOD"]) if ENV["GEMFILE_MOD"]
