@@ -16,7 +16,7 @@ gem "ohai", "~> 13"
 gem "chef-config", path: File.expand_path("../chef-config", __FILE__) if File.exist?(File.expand_path("../chef-config", __FILE__))
 gem "rake"
 gem "bundler"
-gem "cheffish", "~> 13" # required for rspec tests
+gem "cheffish", "~> 13", ">= 13.0.0" # required for rspec tests
 
 group(:omnibus_package) do
   gem "appbundler"
