@@ -16,7 +16,7 @@ gem "ohai", "~> 13"
 gem "chef-config", path: File.expand_path("../chef-config", __FILE__) if File.exist?(File.expand_path("../chef-config", __FILE__))
 gem "rake"
 gem "bundler"
-gem "cheffish", "~> 13" # required for rspec tests
+gem "cheffish", "~> 13", ">= 13.1.0" # required for rspec tests
 
 group(:omnibus_package) do
   gem "appbundler"
@@ -36,12 +36,12 @@ end
 # These are used for external tests
 group(:integration) do
   gem "chef-sugar"
-  gem "chefspec"
+  gem "chefspec", ">= 6.0.0"
   gem "halite", git: "https://github.com/poise/halite.git"
   gem "poise", git: "https://github.com/poise/poise.git"
   gem "poise-boiler", git: "https://github.com/poise/poise-boiler.git"
   gem "knife-windows"
-  gem "foodcritic"
+  gem "foodcritic", ">= 9.0.0"
 
   # We pin this so nobody brings in a cucumber-core incompatible with cucumber latest
   gem "cucumber", ">= 2.4.0"
@@ -50,7 +50,7 @@ group(:integration) do
 end
 
 group(:docgen) do
-  gem "yard"
+  gem "yard", ">= 0.9.35"
 end
 
 group(:maintenance, :ci) do
