@@ -11,17 +11,17 @@ source "https://rubygems.org"
 # of bundler versions prior to 1.12.0 (https://github.com/bundler/bundler/commit/193a14fe5e0d56294c7b370a0e59f93b2c216eed)
 gem "chef", path: "."
 
-gem "ohai", "~> 13"
+gem "ohai", "~> 13", ">= 13.1.0"
 
 gem "chef-config", path: File.expand_path("../chef-config", __FILE__) if File.exist?(File.expand_path("../chef-config", __FILE__))
 gem "rake"
 gem "bundler"
-gem "cheffish", "~> 13" # required for rspec tests
+gem "cheffish", "~> 15", ">= 15.0.0" # required for rspec tests
 
 group(:omnibus_package) do
   gem "appbundler"
   gem "rb-readline"
-  gem "inspec"
+  gem "inspec", ">= 4.18.85"
   # nokogiri has no ruby-2.4 version for windows so it cannot go into our Gemfile.lock
   #  gem "nokogiri", ">= 1.7.1"
 end
@@ -36,12 +36,12 @@ end
 # These are used for external tests
 group(:integration) do
   gem "chef-sugar"
-  gem "chefspec"
+  gem "chefspec", ">= 6.0.0"
   gem "halite", git: "https://github.com/poise/halite.git"
   gem "poise", git: "https://github.com/poise/poise.git"
   gem "poise-boiler", git: "https://github.com/poise/poise-boiler.git"
-  gem "knife-windows"
-  gem "foodcritic"
+  gem "knife-windows", ">= 1.9.1"
+  gem "foodcritic", ">= 9.0.0"
 
   # We pin this so nobody brings in a cucumber-core incompatible with cucumber latest
   gem "cucumber", ">= 2.4.0"
@@ -57,7 +57,7 @@ group(:maintenance, :ci) do
   gem "tomlrb"
 
   # To sync maintainers with github
-  gem "octokit"
+  gem "octokit", ">= 4.8.0"
   gem "netrc"
 end
 
@@ -82,13 +82,13 @@ end
 
 group(:ci) do
   gem "github_changelog_generator", git: "https://github.com/chef/github-changelog-generator"
-  gem "mixlib-install"
+  gem "mixlib-install", ">= 3.0.0"
 end
 
 group(:travis) do
   # See `bundler-audit` in .travis.yml
   gem "bundler-audit", git: "https://github.com/rubysec/bundler-audit.git"
-  gem "travis"
+  gem "travis", ">= 1.8.9"
 end
 
 instance_eval(ENV["GEMFILE_MOD"]) if ENV["GEMFILE_MOD"]
