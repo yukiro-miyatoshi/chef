@@ -21,7 +21,7 @@ gem "cheffish", "~> 13" # required for rspec tests
 group(:omnibus_package) do
   gem "appbundler"
   gem "rb-readline"
-  gem "inspec"
+  gem "inspec", ">= 1.19.2"
   # nokogiri has no ruby-2.4 version for windows so it cannot go into our Gemfile.lock
   #  gem "nokogiri", ">= 1.7.1"
 end
@@ -57,7 +57,7 @@ group(:maintenance, :ci) do
   gem "tomlrb"
 
   # To sync maintainers with github
-  gem "octokit"
+  gem "octokit", ">= 4.23.0"
   gem "netrc"
 end
 
@@ -88,7 +88,7 @@ end
 group(:travis) do
   # See `bundler-audit` in .travis.yml
   gem "bundler-audit", git: "https://github.com/rubysec/bundler-audit.git"
-  gem "travis"
+  gem "travis", ">= 1.12.0"
 end
 
 instance_eval(ENV["GEMFILE_MOD"]) if ENV["GEMFILE_MOD"]
